@@ -2,26 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* 
+
+*/
+::selection {
+    background-color: #3b82f6;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    font-family: 'Manrope', sans-serif;
+    scrollbar-width: 0;
+}
+
+
+
+html,
+body,
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'Manrope', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.spinner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.spinner {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3.5px solid #e0f2fe;
+    border-top-color: #3b82f6;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
